@@ -1,1 +1,1 @@
-web: streamlit run --server.port 5000 --server.baseUrlPath https://minimal-streamlit.herokuapp.com/ beta_distribution.py
+web: streamlit run --server.port $PORT --server.baseUrlPath minimal-streamlit.herokuapp.com beta_distribution.py
