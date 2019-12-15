@@ -264,10 +264,11 @@ st.write(
 I'd like to invite you to upload your own data.
 
 Type in numbers into the text box below, separated by commas.
+Example data have been provided for you.
 """
 )
 
-data = st.text_input("Your data")
+data = st.text_input("Your data", value="0.993, 0.91, 0.779")
 
 
 def process_data(data):
