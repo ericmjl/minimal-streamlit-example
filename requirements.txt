@@ -5,3 +5,4 @@ scipy
 hvplot
 bokeh
 holoviews
+scikit-learn
