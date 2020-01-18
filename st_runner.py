@@ -21,9 +21,13 @@ for basename in os.listdir(folder):
         fnames.append(fname)
 
 # Make a UI to run different files.
-files = {f.split("/")[-1].split(".")[0]: f for f in fnames}
-filename = st.sidebar.selectbox("Select an app", list(files.keys()))
-fname_to_run = files[filename]
+def format_func(s):
+    return s.split("/")[-1].split(".")[0]
+
+
+fname_to_run = st.sidebar.selectbox(
+    "Select an app", fnames, format_func=format_func
+)
 
 # Create module from filepath and put in sys.modules, so Streamlit knows
 # to watch it for changes.
