@@ -1,8 +1,11 @@
 import streamlit as st
-from scipy.stats import beta, norm
+from scipy.stats import beta
 import numpy as np
 import matplotlib.pyplot as plt
+import hvplot.pandas  # noqa: F401
+import holoviews as hv
 
+hv.extension("bokeh")
 
 st.header("Beta Distribution Tutorial")
 
@@ -122,7 +125,8 @@ that best explain these three data points?
 The best ratio of alpha to beta is probably around 1:6.
 However, is it 1:6, or is it 6:36, or is it 15:90?
 
-Play around with different ratios to see which one maximizes the log likelihood.
+Play around with different ratios
+to see which one maximizes the log likelihood.
 """
 )
 
@@ -277,7 +281,7 @@ def process_data(data):
     # This is done by capturing the output of stdout and surfacing it to HTML.
     try:
         data = np.array([float(i) for i in data.split(", ")])
-    except ValueError as e:
+    except ValueError:
         raise ValueError("The data that you input must be castable as floats!")
     if not (np.all(data > 0) and np.all(data < 1)):
         raise ValueError("Your input data must be 0 < x < 1.")
@@ -300,7 +304,8 @@ Did you like this mini-tutorial?
 
 If you did, please give it a star on [GitHub](https://github.com/ericmjl/minimal-streamlit-example).
 
-This was hand-crafted using streamlit in under 3 hours.
+This was hand-crafted using streamlit in under 3 hours,
+2.5 of which were spent crafting prose.
 
 Created by [Eric J. Ma](https://ericmjl.github.io).
 """

@@ -16,5 +16,7 @@ dependencies:
 - pydocstyle
 - flake8
 - black
+- hvplot
+- bokeh
 - pip:
   - streamlit

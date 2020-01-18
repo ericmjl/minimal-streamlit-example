@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run beta_distribution.py
+web: sh setup.sh && streamlit run st_runner.py apps
