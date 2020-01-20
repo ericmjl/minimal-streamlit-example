@@ -22,7 +22,8 @@ for basename in os.listdir(folder):
 
 # Make a UI to run different files.
 def format_func(s):
-    return s.split("/")[-1].split(".")[0]
+    els = s.split("/")[-1].split(".")[0].split("_")
+    return " ".join(el for el in els).capitalize()
 
 
 fname_to_run = st.sidebar.selectbox(
