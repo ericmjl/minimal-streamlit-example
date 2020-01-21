@@ -17,7 +17,7 @@ fnames = []
 for basename in os.listdir(folder):
     fname = os.path.join(folder, basename)
 
-    if fname.endswith(".py") and fname != this_file:
+    if fname.endswith(".py") and fname != this_file and "utils" not in fname:
         fnames.append(fname)
 
 # Make a UI to run different files.
